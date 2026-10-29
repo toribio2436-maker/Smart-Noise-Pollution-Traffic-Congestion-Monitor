@@ -6,16 +6,8 @@ Proyek ini dikembangkan untuk memenuhi kriteria tugas IoT terdistribusi dengan m
 # Gambaran Umum Sistem
 Sistem mengintegrasikan analisis sinyal suara berbasis kecerdasan buatan (Edge AI) pada HP Android dengan pengukuran kinetik & polusi udara pada mikrokontroler ESP32. Data dari kedua edge device dikirimkan secara asinkron ke Cloud Broker (MQTT), lalu diolah oleh Sensor Fusion Rule Engine di laptop (Node 3) untuk menentukan tingkat kemacetan dan bahaya lingkungan secara real-time.
 
-flowchart LR
-  subgraph LOKAL["Jaringan Lokal Wi-Fi"]
-    A["Edge 1: HP Android<br/>(Audio Capture + AI CNN)"]
-    B["Edge 2: ESP32<br/>(2x IR Sensors + MQ-135)"]
-    L["Node 3: Laptop<br/>(Rule Engine + Dashboard)"]
-  end
+<img width="324" height="156" alt="image" src="https://github.com/user-attachments/assets/cf67af7d-19d7-498e-9d7e-3dafc1dc656e" />
 
-  A -->|MQTT Publish| M["Cloud Broker (HiveMQ)"]
-  B -->|MQTT Publish| M
-  M -->|Subscribe Telemetry| L
 
   Cara Menjalankan Proyek
 
